@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dynamic Multiplication Table</title>
+    <link href="css/c01.css" rel="stylesheet">
+    <script src="js/js.js"></script>
+</head>
+
+<body class="landing_page">
+    <div id="page-wrapper">
+        <h1 class="title">Dynamic Multiplication Table</h1>
+        <hr>
+        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.</p>
+            <form id="range_input" onsubmit="return false;">
+                <ul>
+                    <li>Length:<br>
+                        <input type="number" id="row_start" autofocus required placeholder="Starting value">
+                        <label for="row_start" id="min_length_error_message"> </label>
+                    </li>
+                    <li>
+                        <input type="number" id="row_end" required placeholder="Ending value">
+                        <label for="row_end" id="max_length_error_message"> </label>
+                    </li>
+                    <li> Width:<br>
+                        <input type="number" id="col_start" required placeholder="Starting value">
+                        <label for="col_start" id="min_width_error_message"> </label>
+                    </li>
+                    <li>
+                        <input type="number" id="col_end" required placeholder="Ending value">
+                        <label for="col_end" id="max_width_error_message"> </label>
+                    </li>
+                </ul>
+                <input type="submit" id="submit_button" onclick="validate_form()" value="Draw Table!">
+            </form>
+            <hr>
+            <p id="tableout"></p>
+    </div>
+    <footer>
+        <br>Copyright 2018 by Nhan Tran. Updated Nov 2018. This page is valid
+     </footer>
+</body>
+
+</html>

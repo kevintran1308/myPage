@@ -1,0 +1,169 @@
+/* main body with background */
+
+body {
+    background: url(../images/background.jpg) top right no-repeat;
+    background-attachment: fixed;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    font-size: 15px;
+    line-height: 1.5;
+    display: block;
+}
+
+
+/* headings */
+
+h1 {
+    text-align: center;
+}
+
+
+/* overall wrapper */
+
+#page-wrapper {
+    width: 750px;
+    position: relative;
+    margin: 15px auto;
+    padding: 10px 30px 15px 30px;
+    background: hsla(182, 53%, 85%, 0.83);
+    border: 2px solid #988;
+    text-align: left;
+}
+
+
+/* input box for numbers */
+
+input[type=number],
+input[type=text] {
+    transition: background-color .25s ease-in-out;
+    background: #f9fbfe;
+    border: 1px solid#d2d7dc;
+    border-radius: .50em;
+    width: 150px;
+    line-height: 1em;
+    padding: .75em;
+    margin: 5px 15px 5px 0px;
+}
+
+
+input[type=submit] {
+    transition: color .25s ease-in-out, border-color .25s ease-in-out, background-color .25s ease-in-out;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid#d2d7dc;
+    border-radius: .50em;
+    padding: .75em;
+    cursor: pointer;
+}
+
+
+/*divider line*/
+
+hr {
+    border: 0;
+    border-top: 1px solid hsla(201, 53%, 26%, 0.68);
+}
+
+
+/*unordered list*/
+
+ul {
+    list-style: none;
+    margin: 15px 0px 15px 0px;
+}
+
+
+/*field set to section off the form*/
+
+fieldset {
+    border: solid 2px hsla(182, 53%, 85%, 0.83);
+    width: inherit;
+}
+
+
+/*shared settings*/
+
+
+/* padding for paragraph and unordered list ,now allows scrolling when overflow*/
+
+p,
+ul {
+    padding: 0;
+    overflow: auto;
+}
+
+
+/* bold text forsubmit button,legends,error text*/
+
+input[type=submit],
+legend,
+.error {
+    font-weight: bold;
+}
+
+
+/* footer */
+
+footer {
+    font-size: 13px;
+    font-family: sans-serif;
+    color: black;
+    text-align: center;
+}
+
+
+/* table */
+
+table {
+    margin: auto;
+    position: relative;
+    border-spacing: 1px;
+    text-align: center;
+    font-size: 12px;
+    empty-cells: hide;
+}
+
+
+/*padding for row and cells*/
+
+tr,
+td {
+    padding: 7px;
+}
+
+
+/*setting for header row and col*/
+
+tr td:first-child,
+td.header {
+    color: white;
+    background-color: rgba(0, 87, 163, 0.81);
+    border: white 1px thin;
+}
+
+
+/*checkered color for cells: both i and j even or odd*/
+
+td.both_even_or_odd {
+    color: rgba(199, 0, 0, 1);
+    background-color: white;
+}
+
+
+/*checkered color for cells: either i and j even or odd*/
+
+td.either_even_or_odd {
+    color: white;
+    background-color: orangered;
+}
+
+
+/*error text settings for jquery*/
+
+.error {
+    color: red;
+    font-style: italic;
+    border: 2px solid red;
+    padding: 5px 6px 5px 6px;
+}

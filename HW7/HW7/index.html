@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- english language-->
+
+<head>
+    <meta charset="utf-8">
+    <!-- complies with utf8 standard -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fit viewing device-->
+    <title> Dynamic Multiplication Table</title>
+    <link href="css/c01.css" rel="stylesheet">
+    <!--  this will stop the browser from requesting icon-->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- scripts-->
+    <!-- import jquery for validation -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+</head>
+
+<body class="landing_page">
+    <div id="page-wrapper">
+        <!--overall wrapper,middle of page-->
+        <!--heading 1: what the page is about -->
+        <h1 class="title">Dynamic Multiplication Table with JQuery Plugin</h1>
+        <hr>
+        <!--  Divider line -->
+        <!-- brief description and instructions-->
+        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.
+            <form name="input_form" id="input_form" autocomplete="off">
+                <fieldset>
+                    <!--setting up fieldset and legend for instructions and better formatting-->
+                    <legend>Please enter integers only</legend>
+                    <!-- start of input form-->
+                    <ul>
+                        <!-- using ul and li to keep things ordered-->
+                        <li>Length:<br>
+                            <!--each li contains input box and corresponding error msg-->
+                            <!-- all four input boxes only allowed number type,always required input-->
+                            <!-- min row input box ,which ever input box has error will be focus-->
+                            <input type="text" id="row_start" name="row_start" placeholder="Starting value">
+                        </li>
+                        <li>
+                            <!-- max row input box -->
+                            <input type="text" id="row_end" name="row_end" placeholder="Ending value">
+                        </li>
+                        <li> Width:<br>
+                            <!-- min col input box -->
+                            <input type="text" id="col_start" name="col_start" placeholder="Starting value">
+                        </li>
+                        <li>
+                            <!-- max col input box -->
+                            <input type="text" id="col_end" name="col_end" placeholder="Ending value">
+                        </li>
+                    </ul>
+                    <input type="submit" id="submit_button" value="Draw Table!">
+                    <!-- submit buttons which triggers the js function upon user click it-->
+                </fieldset>
+            </form>
+            <script src="js/js.js"></script>
+            <!--  Divider line -->
+            <!-- Table paragraph,centralized, header row and first td child(column header) should be colored
+        differently from actual content of table-->
+            <p id="tableout"></p>
+
+    </div>
+    <footer>
+        <!-- Copyright section + Validator link-->
+    </footer>
+</body>
+
+</html>

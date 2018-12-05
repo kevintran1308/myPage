@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- english language-->
+
+<head>
+    <meta charset="utf-8">
+    <!-- complies with utf8 standard -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fit viewing device-->
+    <title> Dynamic Multiplication Table</title>
+    <link href="css/c01.css" rel="stylesheet">
+    <!--  this will stop the browser from requesting icon-->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- scripts-->
+    <!-- import jquery for validation -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="js/jquery.validate.js"></script>
+	<script src="js/js.js"></script>
+</head>
+
+<body class="landing_page">
+    <div id="page-wrapper">
+        <!--overall wrapper,middle of page-->
+        <!--heading 1: what the page is about -->
+        <h1 class="title">Dynamic Multiplication Table with JQuery Plugin</h1>
+        <hr>
+        <!--  Divider line -->
+        <!-- brief description and instructions-->
+        <p> A simple JS WebApp that can dynamically draw a multiplication table given the length and width.<br>Click "Save Tab" to save a snapshot of your favorite tables to a new tab!
+            <!-- the original input form is a tab-->
+            <div id="tabs">
+                <ul>
+                    <li class="tab"><a href="#tab-1">Input Form</a></span>
+                    </li>
+                    <!-- each of these li is one tab/entry -->
+                    <!-- subsequently created tab is saved side by side with the form-->
+                </ul>
+                <!-- first tab, the input form-->
+                <div id="tab-1">
+                    <form name="input_form" id="input_form" autocomplete="off">
+                        <!--setting up legend for instructions and better formatting-->
+                        <fieldset>
+                            <legend>Please enter integers only</legend>
+                            <!-- start of input form-->
+                            <br>
+                            <!-- using ul and li to keep things ordered-->
+                            Length:
+                            <br>
+                            <!--each li contains input box ,corresponding error msg and slider for changing values-->
+                            <!-- all four input boxes only allowed number type,always required input-->
+                            <!-- min row input box and slider,whichever input box has error will be focused-->
+                            <input type="text" id="row_start" name="row_start" placeholder="Starting value">
+                            <div id="slider_row_start"></div>
+                            <!-- max row input box and slider-->
+                            <input type="text" id="row_end" name="row_end" placeholder="Ending value">
+                            <div id="slider_row_end"></div>
+                            Width:
+                            <br>
+                            <!-- min col input box and slider -->
+                            <input type="text" id="col_start" name="col_start" placeholder="Starting value">
+                            <div id="slider_col_start"></div>
+                            <!-- max col input box and slider-->
+                            <input type="text" id="col_end" name="col_end" placeholder="Ending value">
+                            <div id="slider_col_end"></div>
+                            <!-- submit button which triggers the js function upon user click it-->
+                            <input type="submit" id="addTab" value="Save Table">
+                            <input type="submit" id="deleteTabs" value="Delete all tabs">
+                            <!-- save button to save current table into a tab,will check for valid form first-->
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!-- Table paragraph,centralized, header row and first td child(column header) should be colored
+        differently from actual content of table-->
+            <p id="tableout"></p>
+
+    </div>
+    <footer>
+        <!-- Copyright section + Validator link-->
+        <br>Copyright 2018 by NHan Tran. This page is valid
+        <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fkevintran1308.github.io%2FmyPage%2FHW7%2Findex.html" target="_blank"><i class="fa fa-html5"></i>HTML5</a> and
+        <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkevintran1308.github.io%2FmyPage%2FHW7%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en" target="_blank"><i class="fa fa-css3"></i>CSS3</a> as per W3C.
+    </footer>
+</body>
+
+</html>

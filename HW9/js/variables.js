@@ -1,0 +1,11 @@
+var char_list = []; // list of char on rack
+var ScrabbleTiles = []; // the bag that contain all tiles
+var word_list = []; // list of completed word :TBD
+var tile_array = []; // list of all tiles that has word on the board(n,c,d)
+var completed_word = []; // containing all words in it
+var tile_class_array = []; // containing all the tile object
+var permanent_tile_array = []; // permanently placed tile TBD
+var number_of_round = 0; // TBD
+var letters_drawn = []; // new div drawn for each tile
+var score = 0;
+var counter = 1;

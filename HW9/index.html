@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- complies with utf8 standard -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fit viewing device-->
+    <!--  Custom Title Bar -->
+    <title>Scrabble Word</title>
+    <!--  jQuery UI Theme -->
+    <link rel="stylesheet" href="css/c01.css">
+    <!-- css link -->
+    <!--  Custom favicon inspired by Jason Downing
+        URL: http://orig10.deviantart.net/7bc3/f/2013/338/8/8/flat_scrabble_icon_by_awesomestwinner-d6wpolw.png -->
+    <link rel="icon" href="img/titleicon.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <!-- wrapper for entire page -->
+    <div class="wrapper">
+        <div id="mat">
+            <!-- mat design inspired by Asalani -->
+            <div id="tableout"></div>
+            <!-- Table output for game board -->
+            <div id="pane-l">
+                <!-- Left panel for scores,total letters and buttons -->
+                <div id="score">Score: 0</div>
+                <div id="total_remaining"></div>
+                <!-- Buttons -->
+                <input type="submit" id="end_turn" value="End Turn">
+                <input type="submit" id="recall_tiles" value="Recall Tiles">
+                <input type="submit" id="new_hand" value="New Tiles">
+                <input type="submit" id="new_game" value="New Game">
+            </div>
+            <!-- Message box -->
+            <div id="text_box">
+                <div id="error_message">
+                    Scrabble Ready
+                </div>
+                <div id="tile_removed">
+                </div>
+            </div>
+        </div>
+        <!-- Rack for containing all word tiles -->
+        <div id="rack" class="rack-ui">
+            <div id="tile_area">
+                <!-- Tile area for all tiles -->
+                <ul class="hands">
+                </ul>
+            </div>
+            <div id="return_rack">Return</div>
+            <!-- Return to rack -->
+            <div id="shuffle_tile">Exchange</div>
+            <!-- TBD: will get a new tile -->
+        </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins). -->
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery UI Slider and Tab Wigets -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Prof Jess map for tiles -->
+    <script type='text/javascript' src="js/Scrabble_Pieces_AssociativeArray_Jesse.js"></script>
+    <!-- global variables js file -->
+    <script type='text/javascript' src="js/variables.js"></script>
+    <!-- handle player hand -->
+    <script type='text/javascript' src="js/player_hand.js"></script>
+    <!-- JS file to handle the scrabble board -->
+    <script type='text/javascript' src="js/board.js"></script>
+    <!-- calculate score -->
+    <script type='text/javascript' src="js/score.js"></script>
+    <!-- scrabble game logic -->
+    <script type='text/javascript' src="js/scrabble.js"></script>
+    <!-- button logic -->
+    <script type='text/javascript' src="js/buttons.js"></script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,551 @@
+/* main body with background color */
+
+body {
+    background-image: url("../img/background.png");
+}
+
+
+/* ul list style */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* li list style */
+
+li {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+}
+
+
+/* wrapper with flexbox */
+
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    /*display: -webkit-flex;*/
+    /* Safari 8 */
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    /* Safari 8 */
+    justify-content: center;
+    -webkit-justify-content: center;
+    /* Safari 8 */
+    /*Source 
+    http://stackoverflow.com/questions/5523632/aligning-a-floatleft-div-to-center
+    */
+}
+
+
+/* score and total tiles settings */
+
+#score,
+#total_remaining {
+    text-align: center;
+    color: white;
+}
+
+
+/* error message box */
+
+#text_box {
+    background-color: hsla(17, 0%, 40%, 0.79);
+    box-shadow: 0 0 3px 1px #000;
+    height: 95px;
+    text-align: center;
+    left: 15px;
+    padding: 15px;
+    top: 15px;
+    width: 190px;
+    margin: 10px 0px 10px 10px;
+    float: left;
+    color: white;
+}
+
+#tile_removal {
+    color: white;
+}
+
+
+/* Location for the menu and score UI components. */
+
+#pane-l {
+    background-color: hsla(17, 0%, 40%, 0.79);
+    box-shadow: 0 0 3px 1px #000;
+    height: inherit;
+    left: 15px;
+    padding: 15px;
+    top: 15px;
+    width: 190px;
+    margin: 10px 10px 10px 10px;
+    float: left;
+}
+
+
+/* entire board game lies on the mat */
+
+#mat {
+    /* source :http://bg.siteorigin.com/ */
+    background-image: url("../img/matpic.jpg");
+    border: 5px solid black;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px 0 #000000;
+    min-height: 750px;
+    width: 980px;
+}
+
+
+/* contain all the playing tiles */
+
+#rack {
+    background-image: url("../img/matpic.jpg");
+    border-radius: 5px;
+    border: 5px solid #000;
+    box-shadow: 0 5px 20px 0 #000000;
+    min-height: 650px;
+    width: 75px;
+    margin-left: 20px;
+}
+
+
+/* area that has the tile */
+
+#tile_area {
+    min-height: 380px;
+    margin: 10px;
+}
+
+
+/* area that allow return to the rack */
+
+#return_rack {
+    background-color: hsla(195, 100%, 25%, 0.8);
+    box-shadow: 0 0 3px 1px #000;
+    width: 75px;
+    min-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* shuffle a tile and get a random tile! TBD */
+
+#shuffle_tile {
+    background-color: hsla(354, 100%, 25%, 0.48);
+    box-shadow: 0 0 3px 1px #000;
+    width: 75px;
+    min-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* all input button */
+
+input[type=submit] {
+    transition: color .25s ease-in-out, border-color .25s ease-in-out, background-color .25s ease-in-out;
+    text-decoration: none;
+    border: 1px solid#d2d7dc;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: .50em;
+    /*padding: 5px;*/
+    cursor: pointer;
+    width: 85px;
+    font-size: 12px;
+    margin: 10px 5px 5px 5px;
+    display: block;
+    float: left;
+    height: 40px;
+}
+
+
+/* square settings,white by default */
+
+.square {
+    background-color: white;
+    border: 1px dotted grey;
+    float: left;
+    height: 44px;
+    padding: 1px;
+    width: 44px;
+}
+
+
+/* table settings to display the game board */
+
+table {
+    width: 740px;
+    min-height: 680px;
+    margin-bottom: -5px;
+    text-align: center;
+    float: right;
+    padding: 5px;
+}
+
+
+/* each cell settings, with customized color for different tile scores */
+
+td {
+    background-color: white;
+    border: 1px dotted grey;
+    float: left;
+    height: 44px;
+    width: 44px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+}
+
+
+/*double word is red color*/
+
+td.double_word {
+    background-color: hsla(360, 47%, 50%, 1);
+}
+
+
+/*inserting letters*/
+
+td.double_word::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "2x WORD";
+    padding-top: 10px;
+}
+
+
+/*triple word is pink color*/
+
+td.triple_word {
+    background-color: palevioletred;
+}
+
+
+/*inserting letters*/
+
+td.triple_word::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "3x WORD";
+    padding-top: 10px;
+}
+
+
+/*double letter is sky blue*/
+
+td.double_letter {
+    background-color: lightskyblue;
+}
+
+
+/*inserting letters*/
+
+td.double_letter::before {
+    /*top: 0;
+    left: -10px;*/
+    font-size: 12px;
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "2x LETTER";
+    padding-top: 10px;
+}
+
+
+/*triple letter is dark blue*/
+
+td.triple_letter {
+    background-color: hsla(233, 33%, 50%, 1);
+}
+
+
+/*inserting letters*/
+
+td.triple_letter::before {
+    /*top: 0;
+    left: -10px;*/
+    height: 40px;
+    vertical-align: middle;
+    position: relative;
+    content: "3x LETTER";
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+
+/*start has a star, inspired by Jason Downing*/
+
+td.start {
+    background: url("../img/star.png") no-repeat;
+    background-size: cover;
+}
+
+
+/* tile settings with before and after selector to display word and value */
+
+.tile {
+    background: url("../img/tile.png") no-repeat;
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    position: relative;
+}
+
+
+/*before display the letter, all 26 letters*/
+
+.tile::before {
+    font-size: 21px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.tile.tile-a::before {
+    content: "A";
+}
+
+.tile.tile-b::before {
+    content: "B";
+}
+
+.tile.tile-c::before {
+    content: "C";
+}
+
+.tile.tile-d::before {
+    content: "D";
+}
+
+.tile.tile-e::before {
+    content: "E";
+}
+
+.tile.tile-f::before {
+    content: "F";
+}
+
+.tile.tile-g::before {
+    content: "G";
+}
+
+.tile.tile-h::before {
+    content: "H";
+}
+
+.tile.tile-i::before {
+    content: "I";
+}
+
+.tile.tile-j::before {
+    content: "J";
+}
+
+.tile.tile-k::before {
+    content: "K";
+}
+
+.tile.tile-l::before {
+    content: "L";
+}
+
+.tile.tile-m::before {
+    content: "M";
+}
+
+.tile.tile-n::before {
+    content: "N";
+}
+
+.tile.tile-o::before {
+    content: "O";
+}
+
+.tile.tile-p::before {
+    content: "P";
+}
+
+.tile.tile-q::before {
+    content: "Q";
+}
+
+.tile.tile-r::before {
+    content: "R";
+}
+
+.tile.tile-s::before {
+    content: "S";
+}
+
+.tile.tile-t::before {
+    content: "T";
+}
+
+.tile.tile-u::before {
+    content: "U";
+}
+
+.tile.tile-v::before {
+    content: "V";
+}
+
+.tile.tile-w::before {
+    content: "W";
+}
+
+.tile.tile-x::before {
+    content: "X";
+}
+
+.tile.tile-y::before {
+    content: "Y";
+}
+
+.tile.tile-z::before {
+    content: "Z";
+}
+
+.tile.tile-_::before {
+    content: "";
+}
+
+
+/*after selector display the value of each letter*/
+
+.tile::after {
+    font-size: 9px;
+    position: absolute;
+    bottom: 0;
+    padding-left: 10px;
+    left: 21px;
+}
+
+.tile.tile-a::after {
+    content: "1";
+}
+
+.tile.tile-b::after {
+    content: "3";
+}
+
+.tile.tile-c::after {
+    content: "3";
+}
+
+.tile.tile-d::after {
+    content: "2";
+}
+
+.tile.tile-e::after {
+    content: "1";
+}
+
+.tile.tile-f::after {
+    content: "4";
+}
+
+.tile.tile-g::after {
+    content: "2";
+}
+
+.tile.tile-h::after {
+    content: "4";
+}
+
+.tile.tile-i::after {
+    content: "1";
+}
+
+.tile.tile-j::after {
+    content: "8";
+}
+
+.tile.tile-k::after {
+    content: "5";
+}
+
+.tile.tile-l::after {
+    content: "1";
+}
+
+.tile.tile-m::after {
+    content: "3";
+}
+
+.tile.tile-n::after {
+    content: "1";
+}
+
+.tile.tile-o::after {
+    content: "1";
+}
+
+.tile.tile-p::after {
+    content: "3";
+}
+
+.tile.tile-q::after {
+    content: "10";
+}
+
+.tile.tile-r::after {
+    content: "1";
+}
+
+.tile.tile-s::after {
+    content: "1";
+}
+
+.tile.tile-t::after {
+    content: "1";
+}
+
+.tile.tile-u::after {
+    content: "1";
+}
+
+.tile.tile-v::after {
+    content: "4";
+}
+
+.tile.tile-w::after {
+    content: "4";
+}
+
+.tile.tile-x::after {
+    content: "8";
+}
+
+.tile.tile-y::after {
+    content: "4";
+}
+
+.tile.tile-z::after {
+    content: "10";
+}
+
+.tile.tile-_::after {
+    content: "";
+}

@@ -15,13 +15,10 @@ function draw_tiles(letters_drawn, num) {
         var rand_int = getRandomInt(0, 26);
         do {
             if (rand_int == 26) {
-                // special case : empty tile
                 chr = "_";
             } else {
-                // convert from ascii code( int to string)
                 chr = String.fromCharCode(97 + rand_int);
             }
-            // rand int now wraps around to get a new char if max letter reached
             rand_int = (++rand_int) % 27;
         } while (ScrabbleTiles[chr].number_remaining === 0);
         ScrabbleTiles[chr].number_remaining--;
@@ -37,16 +34,13 @@ function draw_tiles(letters_drawn, num) {
 }
 
 function getRandomInt(min, max) {
-    // getting random int within a range
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 function generate_player_hand(letters_drawn) {
     $('ul').empty();
-    // empty rack 
     for (var i = 0; i < letters_drawn.length; i++) {
         $('ul').append(letters_drawn[i]);
-        // draw rack
     }
     make_tile_draggable();
 }
@@ -54,11 +48,8 @@ function generate_player_hand(letters_drawn) {
 function make_tile_draggable() {
     $(".tile").draggable({
         revert: 'invalid',
-        // put the tile back if drag fail
         helper: "clone",
-        // only use the clone instead of the actual thing
         stop: function() {
-            // Source : taken from Jason Downing 
             $(this).draggable('option', 'revert', 'invalid');
         },
     });

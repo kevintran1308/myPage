@@ -88,11 +88,7 @@ function make_td_droppable() {
             var match;
             //  console.log("length of char list after a tile has been moved" + char_list.length);
             if ($(this).children(".tile").length == 0) {
-                // still can put stuff in if, no child yet
-                // add child to it, now it can no longer accept any tile
                 ui.draggable.detach().appendTo($(this));
-                // detach element from rack and add to board
-                // match = draggableClass.match(/.*\stile-(\w).*/);
                 for (var i = 0; i < char_list.length; i++) {
                     if (draggableID == char_list[i]) {
                         char_list.splice(i, 1);
